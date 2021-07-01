@@ -4,6 +4,12 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+build:
+	curl -LSs https://box-project.github.io/box3/installer.php | php
+	composer update
+	chmod u+x build.sh
+	./build.sh
+
 override_dh_usrlocal:
 
 %:
